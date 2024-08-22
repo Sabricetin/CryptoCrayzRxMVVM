@@ -16,9 +16,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fSY-Tg-8qT">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="9UH-L4-2E2">
+                                <rect key="frame" x="0.0" y="404" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fSY-Tg-8qT">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CryptoCell" rowHeight="93" id="d3j-ls-AEz" customClass="CryptoTableViewCell" customModule="CryptoCrayzRxMVVM" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="93"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d3j-ls-AEz" id="jFL-QU-PkT">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="93"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvD-g1-fES">
+                                                    <rect key="frame" x="20" y="20" width="120" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKC-oe-Vbo">
+                                                    <rect key="frame" x="40" y="54" width="101" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kvD-g1-fES" firstAttribute="top" secondItem="jFL-QU-PkT" secondAttribute="top" constant="20" id="Ntz-x6-r3E"/>
+                                                <constraint firstAttribute="trailing" secondItem="kvD-g1-fES" secondAttribute="trailing" constant="253" id="QhC-LO-uuo"/>
+                                                <constraint firstItem="kvD-g1-fES" firstAttribute="leading" secondItem="jFL-QU-PkT" secondAttribute="leading" constant="20" id="RN3-2g-eLt"/>
+                                                <constraint firstItem="EKC-oe-Vbo" firstAttribute="leading" secondItem="jFL-QU-PkT" secondAttribute="leading" constant="40" id="Rdd-Er-ljN"/>
+                                                <constraint firstAttribute="trailing" secondItem="EKC-oe-Vbo" secondAttribute="trailing" constant="252" id="ReD-us-Cun"/>
+                                                <constraint firstAttribute="bottom" secondItem="EKC-oe-Vbo" secondAttribute="bottom" constant="8" id="oHC-yC-wKZ"/>
+                                                <constraint firstItem="EKC-oe-Vbo" firstAttribute="top" secondItem="kvD-g1-fES" secondAttribute="bottom" constant="10" id="srQ-p2-Sgm"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="kvD-g1-fES" id="1HK-qB-wha"/>
+                                            <outlet property="priceLabel" destination="EKC-oe-Vbo" id="DkC-jL-ZWM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -31,12 +74,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="9UH-L4-2E2" id="kee-FJ-WRO"/>
                         <outlet property="tableView" destination="fSY-Tg-8qT" id="i4P-9h-EBk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="-27"/>
+            <point key="canvasLocation" x="43.511450381679388" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
