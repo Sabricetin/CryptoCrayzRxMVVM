@@ -34,7 +34,8 @@ Bu Swift uygulaması, bir `UITableView` kullanarak kripto para birimlerini liste
 
 ## Ekran Görüntüleri
 
-![CryptoCrazyRxMVVM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/98ad778e-8cad-49e3-b446-e44253e916dd)
+
+![yeni gif](https://github.com/user-attachments/assets/43980052-2fa0-48be-84a8-9eaa099e62ca)
 
 
 ## Kullanım
