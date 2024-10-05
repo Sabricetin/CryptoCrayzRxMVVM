@@ -1,4 +1,4 @@
-### Kripto Para Uygulaması (CryptoCrayzRxMVVM)
+# Kripto Para Uygulaması (CryptoCrayzRxMVVM)
 
 Bu Swift uygulaması, bir `UITableView` kullanarak kripto para birimlerini listeleyen ve kullanıcıların bu para birimlerinin fiyatlarını görüntüleyebileceği bir iOS uygulaması oluşturur. Kod, MVVM (Model-View-ViewModel) tasarım desenini kullanır ve RxSwift ile reaktif programlama ilkelerini uygular.
 
